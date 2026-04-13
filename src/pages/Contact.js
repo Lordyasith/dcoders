@@ -7,8 +7,8 @@ import styles from './Contact.module.css';
 
 const INFO = [
   { icon: '📍', label: 'Location',      val: 'Colombo, Sri Lanka' },
-  { icon: '✉️', label: 'Email',         val: 'hello@dcoders.lk' },
-  { icon: '📞', label: 'Phone',         val: '+94 11 234 5678' },
+  { icon: '✉️', label: 'Email',         val: 'yasithsamarasinghe12@gmail.com' },
+  { icon: '📞', label: 'Phone',         val: '+94 76 0584492' },
   { icon: '🕐', label: 'Response Time', val: 'Within 24 hours' },
 ];
 
