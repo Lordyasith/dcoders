@@ -1,0 +1,12 @@
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: var(--orb-opacity, 0.12); transform: scale(1); }
+  50%       { opacity: calc(var(--orb-opacity, 0.12) * 1.6); transform: scale(1.08); }
+}

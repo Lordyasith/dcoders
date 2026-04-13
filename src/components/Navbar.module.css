@@ -1,0 +1,293 @@
+/* ─── Base nav bar ─────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  height: 68px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease,
+              border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.scrolled {
+  background: rgba(6, 13, 31, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Brand ─────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #67e8f9, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.brandSub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.30);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ─── Desktop links ──────────────────────────────── */
+.desktopLinks {
+  display: flex;
+  gap: 4px;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.07);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.active {
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.10);
+  border-color: rgba(56, 189, 248, 0.30) !important;
+}
+
+.desktopCta { flex-shrink: 0; }
+
+/* ─── Hamburger button ───────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+  z-index: 400;
+}
+
+.hamburger:hover {
+  background: rgba(56, 189, 248, 0.10);
+  border-color: rgba(56, 189, 248, 0.30);
+}
+
+.bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity   0.3s ease,
+              width     0.3s ease;
+}
+
+.bar1Open { transform: translateY(7px) rotate(45deg); }
+.bar2Open { opacity: 0; width: 0; }
+.bar3Open { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Backdrop ───────────────────────────────────── */
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 250;
+  transition: background 0.35s ease;
+  pointer-events: none;
+}
+
+.backdropVisible {
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: all;
+}
+
+/* ─── Mobile Drawer ──────────────────────────────── */
+.drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: min(320px, 88vw);
+  z-index: 350;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerInner {
+  position: relative;
+  height: 100%;
+  background: rgba(8, 16, 36, 0.97);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.drawerBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 8px 0 16px;
+}
+
+.drawerDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 4px 0 8px;
+  flex-shrink: 0;
+}
+
+/* Drawer nav links */
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+  animation: slideInRight 0.35s ease both;
+}
+
+.drawerLink:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.drawerLinkActive {
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.08) !important;
+}
+
+.drawerLinkNum {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.04em;
+  min-width: 20px;
+}
+
+.drawerLinkActive .drawerLinkNum {
+  color: rgba(56, 189, 248, 0.6);
+}
+
+.drawerActiveDot {
+  position: absolute;
+  right: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+/* Drawer CTA */
+.drawerCta {
+  padding: 16px 0 8px;
+}
+
+.drawerContact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.drawerContactLink {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.drawerContactLink:hover { color: #38bdf8; }
+
+.drawerContactSep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}
+
+/* Decorative orb inside drawer */
+.drawerOrb {
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent);
+  pointer-events: none;
+}
+
+/* ─── Animations ─────────────────────────────────── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 860px) {
+  .nav           { padding: 0 20px; }
+  .desktopLinks  { display: none; }
+  .desktopCta    { display: none; }
+  .hamburger     { display: flex; }
+  .backdrop      { display: block; }
+  .drawer        { display: block; }
+}

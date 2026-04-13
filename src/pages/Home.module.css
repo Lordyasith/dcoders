@@ -1,0 +1,194 @@
+/* ─── Hero ─────────────────────────────────────── */
+.heroSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.heroLeft { animation: fadeUp 0.7s ease both; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 99px;
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: blink 2s ease infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.h1 {
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1.08;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.heroSub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.78;
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+
+.heroBtns { display: flex; gap: 14px; flex-wrap: wrap; }
+.heroBtns a { text-decoration: none; }
+
+/* Stats */
+.stats { display: flex; margin-top: 56px; }
+
+.statItem {
+  flex: 1;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.statItem:first-child { padding-left: 0; }
+.statItem:last-child  { padding-right: 0; border-right: none !important; }
+
+.statNum {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #67e8f9, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.38);
+  margin-top: 3px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Hero right grid */
+.heroRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+/* ─── Sections ──────────────────────────────────── */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 48px 80px;
+}
+
+.sectionHead { text-align: center; margin-bottom: 52px; }
+
+.sectionLabel {
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.ctaSection { padding: 0 48px 100px; }
+
+/* ─── Animations ────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Tablet ────────────────────────────────────── */
+@media (max-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    padding: 60px 24px 48px;
+    gap: 48px;
+  }
+  .h1       { font-size: 42px; }
+  .heroSub  { max-width: 100%; font-size: 16px; }
+  .heroRight { grid-template-columns: 1fr 1fr; }
+  .stats    { margin-top: 40px; }
+  .grid3    { grid-template-columns: 1fr 1fr; }
+  .section  { padding: 48px 24px 60px; }
+  .h2       { font-size: 32px; }
+  .ctaSection { padding: 0 24px 72px; }
+}
+
+/* ─── Mobile ────────────────────────────────────── */
+@media (max-width: 600px) {
+  .heroSection { padding: 48px 16px 40px; gap: 36px; }
+  .h1          { font-size: 34px; }
+  .heroSub     { font-size: 15px; }
+  .badge       { font-size: 10px; padding: 5px 12px; }
+  .heroBtns    { flex-direction: column; }
+  .heroBtns a  { width: 100%; }
+  .heroBtns a button { width: 100%; justify-content: center; }
+  .heroRight   { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stats       { flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+  .statItem    { flex: 1 1 40%; padding: 0 !important; border-right: none !important; }
+  .statNum     { font-size: 24px; }
+  .grid3       { grid-template-columns: 1fr; }
+  .section     { padding: 36px 16px 48px; }
+  .h2          { font-size: 26px; }
+  .sectionHead { margin-bottom: 32px; }
+  .ctaSection  { padding: 0 16px 56px; }
+}
+
+/* ─── CTA Strip ─────────────────────────────────── */
+.ctaInner {
+  padding: 56px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+}
+
+.ctaTitle { font-size: 32px; font-weight: 800; margin: 0 0 10px; }
+.ctaSub   { color: rgba(255,255,255,0.45); font-size: 16px; margin: 0; }
+
+.ctaBtns  { display: flex; gap: 14px; flex-shrink: 0; position: relative; }
+.ctaBtns a { text-decoration: none; }
+
+@media (max-width: 760px) {
+  .ctaInner   { flex-direction: column; text-align: center; padding: 40px 24px; gap: 28px; }
+  .ctaTitle   { font-size: 24px; }
+  .ctaBtns    { flex-direction: column; width: 100%; }
+  .ctaBtns a  { width: 100%; }
+  .ctaBtns a button { width: 100%; justify-content: center; }
+}

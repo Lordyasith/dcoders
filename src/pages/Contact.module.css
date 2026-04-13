@@ -1,0 +1,119 @@
+.page { max-width: 1100px; margin: 0 auto; padding: 80px 48px; }
+
+.header { text-align: center; margin-bottom: 64px; animation: fadeUp 0.6s ease both; }
+
+.label {
+  font-size: 12px; color: #38bdf8; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
+}
+
+.h1 { font-size: 50px; font-weight: 900; margin: 0 0 18px; letter-spacing: -0.02em; }
+
+.sub { font-size: 17px; color: rgba(255,255,255,0.45); max-width: 480px; margin: 0 auto; }
+
+.layout { display: grid; grid-template-columns: 1fr 1.55fr; gap: 28px; }
+
+/* Info column */
+.infoCol { display: flex; flex-direction: column; gap: 12px; }
+
+.infoLabel { font-size: 10px; color: rgba(255,255,255,0.38); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.infoVal { font-size: 14px; font-weight: 600; margin-top: 3px; }
+
+.processHeading { font-size: 11px; font-weight: 700; color: #38bdf8; margin-bottom: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.processStep { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+
+.processNum {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: linear-gradient(135deg,#38bdf8,#2563eb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; flex-shrink: 0;
+}
+
+.processText { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+/* Form */
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.fieldWrap { margin-bottom: 18px; }
+
+.fieldLabel {
+  display: block; font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.6); margin-bottom: 7px; letter-spacing: 0.03em;
+}
+
+.input {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px; color: #fff;
+  font-size: 14px; font-family: inherit;
+  padding: 12px 16px; width: 100%; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none; -webkit-appearance: none;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.input::placeholder { color: rgba(255,255,255,0.25); }
+
+.fieldError { font-size: 12px; color: #f87171; margin-top: 5px; }
+
+.budgets { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.budgetBtn {
+  padding: 8px 14px; border-radius: 99px; font-size: 12px; font-weight: 600;
+  cursor: pointer; font-family: inherit;
+  background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.10); transition: all 0.2s;
+}
+
+.budgetBtn:hover { background: rgba(56,189,248,0.08); color: #38bdf8; border-color: rgba(56,189,248,0.25); }
+
+.budgetActive {
+  background: linear-gradient(135deg,#38bdf8,#2563eb) !important;
+  color: #fff !important; border: none !important;
+  box-shadow: 0 4px 14px rgba(56,189,248,0.30);
+}
+
+.disclaimer { text-align: center; font-size: 12px; color: rgba(255,255,255,0.28); margin-top: 14px; }
+
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff;
+  border-radius: 50%; display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Success */
+.successWrap { text-align: center; padding: 120px 48px; max-width: 600px; margin: 0 auto; }
+.successIcon { font-size: 64px; margin-bottom: 24px; filter: drop-shadow(0 0 20px rgba(52,211,153,0.6)); }
+.successTitle { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+.successSub { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 32px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 900px) {
+  .page   { padding: 60px 24px; }
+  .layout { grid-template-columns: 1fr; }
+  .row2   { grid-template-columns: 1fr; }
+  .h1     { font-size: 40px; }
+  /* Show info cards in 2-col grid on tablet */
+  .infoCol { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .page         { padding: 48px 16px; }
+  .header       { margin-bottom: 40px; }
+  .h1           { font-size: 32px; }
+  .sub          { font-size: 15px; }
+  .infoCol      { grid-template-columns: 1fr; }
+  .row2         { grid-template-columns: 1fr; gap: 0; }
+  .budgets      { gap: 6px; }
+  .budgetBtn    { font-size: 11px; padding: 6px 11px; }
+  .successWrap  { padding: 80px 16px; }
+  .successTitle { font-size: 28px; }
+}
